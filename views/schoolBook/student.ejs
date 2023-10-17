@@ -1,0 +1,68 @@
+<%- include ('../parts/head') %>
+
+<body>
+    <nav>
+        <%- include ('../parts/nav') %>
+    </nav>
+
+    <h1>Bienvenue dans ta classe virtuelle /Student/</h1>
+
+    <ul class="schoolBookBlog">
+        <% article.forEach( art => { %>
+            <li>
+                <div width="600">
+                    <h3><%= art.titre %></h3>
+                    <img src='data:image/jpeg;base64, <%= art.img %>' alt="Image" width="550">
+                    <p><%= art.desc %></p>
+                    <h4>Commentaire(s)</h4>
+                    <p><%= art.prenom %></p>
+                    <p><%= art.comment %></p>
+                    <h4>Commenter:</h4>
+                    <form name="formBlogCom" method="post">
+                        <input type="text" name="id" id="id" value="<%= art.id %>" disabled>
+                        <div>
+                            <label for="prenom">Prénom: </label>
+                            <input type="text" name="prenom" id="prenom" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="content">Ecris ton commentaire: </label>
+                            <textarea name="content" id="content" cols="50" rows="5" required></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="submit">Envoyer</button>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+
+
+    <h2>Envoyer un message au prof ou à la direction</h2>
+    <form name="formMSg" method="post">
+        <input type="text" name="id" id="id" value="mettreValeur" disabled>
+        <div>
+            <label for="prenom">Prénom: </label>
+            <input type="text" name="prenom" id="prenom" required>
+        </div>
+        <br>
+        <div>
+            <label for="content">Ecris ton message: </label>
+            <textarea name="content" id="content" cols="50" rows="5" required></textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Envoyer</button>
+        </div>
+        <br>
+    </form>
+    
+    <footer>
+        <%- include ('../parts/footer'); %>
+    </footer>
+
+</body>
+</html>

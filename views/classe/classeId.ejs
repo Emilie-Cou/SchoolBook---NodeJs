@@ -1,0 +1,25 @@
+<%- include ('../parts/head') %>
+
+<body>
+    <nav>
+        <%- include ('../parts/nav') %>
+    </nav>
+    
+    <% classe.forEach( cls => { %>
+        <h1>Classe <%= cls.id %></h1>
+        
+        <h2><%= cls.nom %></h2>
+        <h3>Professeur : <%= cls.prof %></h3>
+        <h4>Description</h4>
+        <p><%= cls.desc %></p>
+        <img src='data:image/jpeg;base64, <%= cls.img %>' alt="Ecole" width="300">
+
+    <% }) %>
+
+        
+    <footer>
+        <%- include ('../parts/footer'); %>
+    </footer>
+    
+</body>
+</html>

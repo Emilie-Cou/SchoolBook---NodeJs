@@ -1,0 +1,74 @@
+<%- include ('../parts/head') %>
+
+<body>
+    <nav>
+        <%- include ('../parts/nav') %>
+    </nav>
+
+    <h1>Bienvenue dans ta classe virtuelle /Prof/</h1>
+
+    <ul class="schoolBookBlog">
+        <% article.forEach( art => { %>
+            <li>
+                <div width="600">
+                    <h3><%= art.titre %></h3>
+                    <img src='data:image/jpeg;base64, <%= art.img %>' alt="Image" width="550">
+                    <p><%= art.desc %></p>
+                    <h4>Commentaire(s)</h4>
+                    <p><%= art.prenom %></p>
+                    <p><%= art.comment %></p>
+                    <form name="formBlogCom" method="post">
+                        <div>
+                            <label for="prenom">Prénom: </label>
+                            <input type="text" name="prenom" id="prenom" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="content">Ecris ton commentaire: </label>
+                            <textarea name="content" id="content" cols="50" rows="5" required></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="submit">Envoyer</button>
+                        </div>
+                        <br>
+                    </form>
+
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+
+    
+    <h2>Ajouter photos et commentaires</h2>
+    <form name="formBlog" method="post">
+        <div>
+            <label for="titre">Titre: </label>
+            <input type="text" name="titre" id="titre">
+        </div>
+        <br>
+        <div>
+            <label for="img">Image: </label>
+            <input type="text" name="img" id="img">
+        </div>
+        <br>
+        <div>
+            <label for="desc">Description: </label>
+            <textarea name="desc" id="desc" cols="50" rows="5" required></textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Envoyer</button>
+        </div>
+    </form>
+
+
+    <h2>Recevoir messages</h2>
+
+
+    <footer>
+        <%- include ('../parts/footer'); %>
+    </footer>
+
+</body>
+</html>

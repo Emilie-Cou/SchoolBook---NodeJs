@@ -1,0 +1,26 @@
+<%- include ('../parts/head') %>
+
+<body>
+    <nav>
+        <%- include ('../parts/nav') %>
+    </nav>
+
+    <h1>Commentaires</h1>
+    <ul class="comment">
+        <% comment.forEach( cmt => { %>
+            <li>
+                <div>
+                    <h3><%= cmt.prenom %></h3>
+                    <p><%= cmt.content %></p>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+
+    
+    <footer>
+        <%- include ('../parts/footer'); %>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+Le site Web doit posséder les pages suivantes :
+ / :            Page d'accueil (Nom, texte de présentation, images, mini menu)
+ /classes :     Liste des classe (Pour chaque classe : Nom, briève description, photo groupe)
+ /classe/:id :  Detail d'une classe (Nom, description complète, image, activités)
+ /about :       Page d'info de l'école
+ /comment :     Page de commentaire des parents
+ /comment/add : Page qui permet à un parents d'ajouter un commentaire
+
+Les classes et les commentaires doivent être stockés en base de données.
+Remarque : Les classes ne sont pas modifiables depuis le site Web.
+
+Modèle des données 
+
+ • Une classe
+   - Nom de la classe
+   - Nom du prof
+   - Image
+   - Description
+   - Courte description (Max 30 caractères)
+
+ • Un commentaire
+   - Le prénom
+   - Le nom (Optionnel)
+   - Un email (Validation du format)
+   - Un message (Minimum 10 caractères)
+   - Avec recontact
+
+------------------------------------------------------------------------------------------------
+
+Améliortation
+
+/prof/:id :     Page de gestion de la classe par son prof
+/student:       Page de description qui concerne la classe de l'enfant (type blog) photos, commentaires, contact prof ou direction
+/connexion:     Page de connexion avec redirection: page prof, page parent
+
+Données
+ • Un prof
+    - ID unique not null
+    - Mot de passe
+    - Nom
+    - Id classe
+    - Email
+    - 
+
+ • Un élève
+    - ID unique not null
+    - Mot de passe 1
+    - Mot de passe 2 si parents séparés
+    - Nom
+    - Prénom
+    - Id classe
+    - Parents séparés
+    - Email 1
+    - Email 2 si parents séparés
+    - 
+
+ • Une classe
+    - ID unique not null
+    - Nom
+    - Desc
+    - Id prof responsable
+    -
+
+ • Un commentaire
+   - Prénom élève
+   - Un message (Minimum 10 caractères)
+   - 
+
+-----------------------
+
+    
